@@ -1,0 +1,18 @@
+ID;title;descr;author_ID;genre_ID;stock;price;currency_code;startDate;endDate
+100;Harry Potter and the Philosopher's Stone;First book of the Harry Potter series;1;10;120;19.99;EUR;1997-06-26;1997-10-01
+101;Harry Potter and the Chamber of Secrets;Second book in the series;1;10;90;21.50;EUR;1998-07-02;1998-11-15
+102;A Game of Thrones;First book of A Song of Ice and Fire;2;11;45;25.90;EUR;1996-08-06;1997-01-20
+103;A Clash of Kings;Second book of A Song of Ice and Fire;2;11;38;27.30;EUR;1998-11-16;1999-03-12
+104;The Hobbit;Children's fantasy novel by Tolkien;3;10;80;15.00;EUR;1937-09-21;1937-12-10
+105;The Handmaid's Tale;Dystopian novel by Atwood;4;12;60;18.40;EUR;1985-04-01;1985-09-30
+106;American Gods;Urban fantasy novel by Neil Gaiman;5;14;55;20.00;EUR;2001-06-19;2001-11-05
+200;The Winds of Winter (Preview Edition);Limited pre-release preview;2;11;25;32.50;EUR;2025-10-01;2025-12-15
+201;Neverwhere – Anniversary Edition;Special reprint edition;5;14;40;18.90;EUR;2025-10-20;2025-11-30
+202;Oryx and Crake – Reissue;Modern dystopian re-release;4;12;30;21.00;EUR;2025-11-05;2026-02-01
+203;Fantastic Beasts – Collector’s Edition;Exclusive illustrated version;1;10;15;28.00;EUR;2025-11-01;2025-12-20
+204;The Silmarillion – Illustrated;New illustrated print;3;11;50;29.90;EUR;2025-09-15;2025-11-10
+205;Good Omens – Special Scriptbook;Tie-in edition;5;14;35;24.50;EUR;2025-11-07;2026-01-15
+206;The Testaments – Paperback Release;New paperback print;4;12;45;17.80;EUR;2025-10-10;2025-11-25
+207;The Children of Húrin – Deluxe Edition;Collector’s hardcover;3;11;22;34.00;EUR;2025-11-02;2026-03-01
+208;A Knight of the Seven Kingdoms – Reprint;Updated cover edition;2;11;33;19.50;EUR;2025-10-05;2025-11-22
+209;Coraline – Illustrated Colour Edition;New illustrated color version;5;14;47;15.90;EUR;2025-11-06;2026-01-01

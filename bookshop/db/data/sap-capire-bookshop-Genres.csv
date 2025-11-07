@@ -1,0 +1,6 @@
+ID;name;descr;parent_ID
+10;Fantasy;Fantasy Books;
+11;Epic Fantasy;Subgenre of Fantasy;10
+12;Dystopian;Dystopian and speculative fiction;
+13;Sci-Fi;Science Fiction;
+14;Urban Fantasy;Modern fantasy with urban settings;10
