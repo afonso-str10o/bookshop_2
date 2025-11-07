@@ -26,3 +26,5 @@ entity Genres : sap.common.CodeList {
   parent   : Association to Genres;
   children : Composition of many Genres on children.parent = $self;
 }
+entity ActiveBooks as projection on Books
+    where startDate <= $now and endDate >= $now;
