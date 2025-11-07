@@ -43,6 +43,10 @@
     }
   },
   "sap.ui5": {
+     "resourceRoots": {
+      "project1": "./",
+      "project1.ext": "./ext"
+    },
     "flexEnabled": true,
     "dependencies": {
       "minUI5Version": "1.142.0",
