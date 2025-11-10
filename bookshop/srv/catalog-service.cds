@@ -8,4 +8,11 @@ service CatalogService {
 
   @cds.redirection.target
   entity ActiveBooks as projection on bookshop.ActiveBooks;
+
+  
+
+  view BookValueHelp as select from
+    (select distinct title, descr from bookshop.Books) {
+      key title, key descr
+  }
 }
