@@ -43,7 +43,7 @@
     }
   },
   "sap.ui5": {
-     "resourceRoots": {
+    "resourceRoots": {
       "project1": "./",
       "project1.ext": "./ext"
     },
@@ -133,6 +133,15 @@
               "editableHeaderContent": false,
               "contextPath": "/Books"
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "project1.ext.controller.Project1_ListReportPageController"
           }
         }
       }

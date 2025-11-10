@@ -115,10 +115,38 @@ annotate service.Books with {
 };
 
 annotate service.Books with {
-    title @Common.Label : 'title'
+    title @(
+        Common.Label : 'title',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Books',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : title,
+                    ValueListProperty : 'title',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.Books with {
-    descr @Common.Label : 'descr'
+    descr @(
+        Common.Label : 'descr',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Books',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : descr,
+                    ValueListProperty : 'descr',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 

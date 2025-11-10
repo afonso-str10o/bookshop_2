@@ -1,4 +1,4 @@
-module.exports = cds.service.impl(function (srv) {
+/* module.exports = cds.service.impl(function (srv) {
     srv.before("READ", "Books", async (req) => {
         const where = req.query?.SELECT?.where;
 
@@ -10,4 +10,4 @@ module.exports = cds.service.impl(function (srv) {
     console.log("Filters exist:", where);
     });
  
-})
+}) */
