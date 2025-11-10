@@ -1,18 +1,56 @@
-sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExtension) {
-	'use strict';
+sap.ui.define([
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/comp/valuehelpdialog/ValueHelpDialog",
+    "sap/ui/model/Sorter",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], function (Controller, ValueHelpDialog, Sorter, Filter, FilterOperator) {
+    "use strict";
 
-	return ControllerExtension.extend('project1.ext.controller.Project1_ListReportPageController', {
-		// this section allows to extend lifecycle hooks or hooks provided by Fiori elements
-		override: {
-			/**
-             * Called when a controller is instantiated and its View controls (if available) are already created.
-             * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-             * @memberOf project1.ext.controller.Project1_ListReportPageController
-             */
-			onInit: function () {
-				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
-				var oModel = this.base.getExtensionAPI().getModel();
-			}
-		}
-	});
+    return Controller.extend("project1.ext.controller.Project1_ListReportPageController", {
+
+        onInit: function () {
+            // Optional: initialization logic
+        },
+
+        onTitleValueHelpRequest: function (oEvent) {
+            var oInput = oEvent.getSource();
+            var oView = this.getView();
+
+            this._oValueHelpDialog = new ValueHelpDialog({
+                supportMultiselect: false,
+                supportRanges: false,
+                key: "ID",
+                descriptionKey: "title",
+                ok: function (oEvent) {
+                    var aTokens = oEvent.getParameter("tokens");
+                    if (aTokens.length > 0) {
+                        oInput.setValue(aTokens[0].getKey());
+                    }
+                    oValueHelpDialog.close();
+                },
+                cancel: function () {
+                    oValueHelpDialog.close();
+                },
+                afterClose: function () {
+                    oValueHelpDialog.destroy();
+                }
+            });
+
+            // Bind to a custom OData entity that returns distinct titles
+            var oModel = oView.getModel(); // assuming default model is OData
+            oValueHelpDialog.setModel(oModel);
+
+            oValueHelpDialog.bindRows({
+                path: "/BookValueHelp", // CDS entity with unique titles
+                sorter: new Sorter("title", false),
+                parameters: {
+                    custom: "true"
+                }
+            });
+
+            oView.addDependent(this._oValueHelpDialog);
+            this._oValueHelpDialog.open();
+        }
+    });
 });

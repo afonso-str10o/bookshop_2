@@ -118,6 +118,15 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "CreateBook": {
+                      "press": "project1.ext.controller.CreateBook.createBookWithDialog",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Criar"
+                    }
                   }
                 }
               }
@@ -141,6 +150,15 @@
       "extensions": {
         "sap.ui.controllerExtensions": {
           "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "project1.ext.controller.Project1_ListReportPageController"
+          },
+          "sap.fe.templates.ListReport.ListReportController#project1::BooksList": {
+            "controllerName": "project1.ext.controller.Project1_ListReportPageController"
+          },
+          "sap.fe.templates.ObjectPage.ObjectPageController": {
+            "controllerName": "project1.ext.controller.Project1_ListReportPageController"
+          },
+          "sap.fe.templates.ObjectPage.ObjectPageController#project1::BooksObjectPage": {
             "controllerName": "project1.ext.controller.Project1_ListReportPageController"
           }
         }

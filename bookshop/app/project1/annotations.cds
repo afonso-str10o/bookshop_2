@@ -123,13 +123,8 @@ annotate service.Books with {
     title @(
         Common.ValueList               : {
             $Type         : 'Common.ValueListType',
-            CollectionPath: 'BookValueHelp',
+            CollectionPath: 'Booktitles',
             Parameters    : [
-                {
-                    $Type            : 'Common.ValueListParameterIn',
-                    LocalDataProperty: descr,
-                    ValueListProperty: 'descr'
-                },
                 {
                     $Type            : 'Common.ValueListParameterInOut',
                     LocalDataProperty: title,

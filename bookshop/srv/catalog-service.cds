@@ -11,6 +11,11 @@ service CatalogService {
 
   
 
+  view Booktitles as select from
+    (select distinct title from bookshop.Books) {
+      key title
+  }
+
   view BookValueHelp as select from
     (select distinct title, descr from bookshop.Books) {
       key title, key descr
