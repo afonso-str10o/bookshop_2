@@ -153,7 +153,12 @@
             "controllerName": "project1.ext.controller.Project1_ListReportPageController"
           },
           "sap.fe.templates.ListReport.ListReportController#project1::BooksList": {
-            "controllerName": "project1.ext.controller.Project1_ListReportPageController"
+            "controllerName": "project1.ext.controller.Project1_ListReportPageController",
+            "actions": {
+              "CreateBook": {
+                "module": "project1/ext/controller/CreateBook"
+              }
+            }
           },
           "sap.fe.templates.ObjectPage.ObjectPageController": {
             "controllerName": "project1.ext.controller.Project1_ListReportPageController"
