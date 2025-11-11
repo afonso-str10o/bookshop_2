@@ -44,15 +44,30 @@ sap.ui.define(
         let oApproveDialog = new Dialog({
           title: "Criar Livro",
           type: DialogType.Message,
+          contentWidth: "70%",
+          contentHeight: "70%",
+          maxWidth: "800px",
+          maxHeigh: "800px",
           content: [
             new sap.m.FlexBox({
               direction: "Column",
               justifyContent: "Center",
               alignItems: "Start",
               items: [
-                new sap.m.Label({ text: "Title", labelFor: "iText" }),
+                new sap.m.Label({ text: "Título", labelFor: "iText" }),
                 new sap.m.TextArea("iText", {
-                  placeholder: "Enter title of the book",
+                  placeholder: "Insere o título do livro.",
+                  width: "700px",
+                }),
+                new sap.m.Label({ text: "Autor", labelFor: "iAuthor" }),
+                new sap.m.TextArea("iAuthor", {
+                  placeholder: "Insere o nome do autor.",
+                  width: "700px",
+                }),
+                new sap.m.Label({ text: "Descrição", labelFor: "iDescr" }),
+                new sap.m.TextArea("iDescr", {
+                  placeholder: "Insere a descrição.",
+                  width: "700px",
                 }),
                 new Label({
                   text: "Do you want to reject this order?",
@@ -81,20 +96,33 @@ sap.ui.define(
           beginButton: new Button({
             type: ButtonType.Emphasized,
             text: "OK",
-            press: function () {
+            press: async () => {
+              const title = sap.ui.getCore().byId("iText").getValue();
+              const author = sap.ui.getCore().byId("iAuthor").getValue();
+              const descr = sap.ui.getCore().byId("iDescr").getValue();
+
+              const oNewBook = {
+                title: title, //
+                author: author, //
+                descr: descr, //
+                stock: 100,
+              };
               oApproveDialog.close();
-              oApproveDialog.setBusy(false);
-              oApproveDialog.destroyContent();
             },
           }),
           endButton: new Button({
             text: "Close",
             press: function () {
               oApproveDialog.close();
-              oApproveDialog.setBusy(false);
-              oApproveDialog.destroyContent();
+              /* oApproveDialog.setBusy(false);
+              oApproveDialog.destroyContent(); */
             },
           }),
+          afterClose: () => {
+            oApproveDialog.setBusy(false);
+            oApproveDialog.destroyContent();
+            oApproveDialog.destroy();
+          },
         });
         oApproveDialog.open();
       },
